@@ -19,8 +19,7 @@
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel --server.urls=http://*:5000/",
-    "weblistener": "Microsoft.AspNetCore.Hosting --server Microsoft.AspNetCore.Server.WebListener --server.urls http://*:5000"
+    "web": "Microsoft.AspNet.Server.Kestrel --server.urls=http://*:5000/"
   },
 
   "frameworks": {

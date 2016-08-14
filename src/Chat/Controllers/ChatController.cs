@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+using Chat.Model;
 
 namespace Chat.Controllers
 {
     [Route("api/[controller]")]
     public class ChatController : Controller
     {
-        public class Messages
-        {
-            public string User { get; set; }
-            public string Message { get; set; }
-            public DateTime Inclusion { get; set; }
-        }
-
-        static Dictionary<string, List<Messages>> messagesByRoom = new Dictionary<string, List<Messages>>();
+        static Dictionary<string, List<Messages>> messagesByRoom = 
+           new Dictionary<string, List<Messages>>();
 
 
         [HttpGet("Sala/{sala}")]
