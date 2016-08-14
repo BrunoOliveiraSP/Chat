@@ -1,0 +1,15 @@
+
+====================================================
+Machine name: programacao-pc
+Machine ip: 191.235.85.153
+
+user: programacao
+pwd: programacao@cf2016
+
+====================================================
+:: CONECTAR REMOTO ::
+
+1. windows + R
+2. mstsc
+3. colocar ip
+====================================================
