@@ -15,16 +15,30 @@ namespace ChatClient.Api
             _httpService = new HttpService();
         }
 
-        public List<Model.Messages> EnterRoom(string room)
+        public List<Model.Messages> EnterRoom(string user, string room)
         {
-            var response = _httpService.Get("http://191.235.85.153:5000/api/Chat/Sala/" + room);
+            var message = new Model.Messages()
+            {
+                User = user,
+                Message = "Entrou na sala",
+                Inclusion = DateTime.Now
+            };
+
+            var contentJson = JsonConvert.SerializeObject(message);
+
+            var response = 
+               _httpService.Post("http://localhost:5000/api/Chat/Entrar/" + room, contentJson);
+
+
+
             var messages = JsonConvert.DeserializeObject<List<Model.Messages>>(response);
+
             return messages;
         }
 
         public List<Model.Messages> LoadMessages(string room)
         {
-            var response = _httpService.Get("http://191.235.85.153:5000/api/Chat/Sala/" + room);
+            var response = _httpService.Get("http://localhost:5000/api/Chat/Carregar/" + room);
             var messages = JsonConvert.DeserializeObject<List<Model.Messages>>(response);
             return messages;
         }
@@ -39,7 +53,7 @@ namespace ChatClient.Api
             };
             var contentJson = JsonConvert.SerializeObject(message);
 
-            var response = _httpService.Post("http://191.235.85.153:5000/api/Chat/Sala/" + room, contentJson);
+            var response = _httpService.Post("http://localhost:5000/api/Chat/Postar/" + room, contentJson);
         }
 
 

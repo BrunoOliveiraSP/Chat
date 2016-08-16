@@ -14,8 +14,22 @@ namespace Chat.Controllers
            new Dictionary<string, List<Messages>>();
 
 
-        [HttpGet("Sala/{sala}")]
-        public ActionResult Rooms(string sala)
+        [HttpPost("Entrar/{sala}")]
+        public ActionResult Entrar(string sala, [FromBody] Messages message)
+        {
+            List<Messages> messages;
+            if (!messagesByRoom.TryGetValue(sala, out messages))
+            {
+                messages = new List<Messages>();
+                messagesByRoom.Add(sala, messages);
+            }
+            messages.Add(message);
+
+            return Json(messages);
+        }
+
+        [HttpGet("Carregar/{sala}")]
+        public ActionResult Carregar(string sala)
         {
             List<Messages> messages;
             if (!messagesByRoom.TryGetValue(sala, out messages))
@@ -28,8 +42,8 @@ namespace Chat.Controllers
         }
 
 
-        [HttpPost("Sala/{sala}")]
-        public void NovaMensagem(string sala, [FromBody]Messages message)
+        [HttpPost("Postar/{sala}")]
+        public void Postar(string sala, [FromBody] Messages message)
         {
             List<Messages> messages;
             if (!messagesByRoom.TryGetValue(sala, out messages))

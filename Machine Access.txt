@@ -1,7 +1,7 @@
 
 ====================================================
 Machine name: programacao-pc
-Machine ip: 191.235.85.153
+Machine ip: programacao-pc.southcentralus.cloudapp.azure.com
 
 user: programacao
 pwd: programacao@cf2016

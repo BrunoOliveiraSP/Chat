@@ -22,7 +22,7 @@ namespace ChatClient
         private void btnEnter_Click(object sender, EventArgs e)
         { 
             Api.ChatService chatService = new Api.ChatService();
-            List<Api.Model.Messages> messages = chatService.EnterRoom(txtRoom.Text);
+            List<Api.Model.Messages> messages = chatService.EnterRoom(txtUser.Text, txtRoom.Text);
 
             RefreshMessages(messages);
         }
@@ -30,7 +30,7 @@ namespace ChatClient
         private void btnLoad_Click(object sender, EventArgs e)
         {
             Api.ChatService chatService = new Api.ChatService();
-            List<Api.Model.Messages> messages = chatService.EnterRoom(txtRoom.Text);
+            List<Api.Model.Messages> messages = chatService.LoadMessages(txtRoom.Text);
 
             RefreshMessages(messages);
         }
@@ -41,6 +41,10 @@ namespace ChatClient
             chatService.PostMessages(txtRoom.Text, txtUser.Text, txtMessage.Text);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
         private void RefreshMessages(List<Api.Model.Messages> messages)
@@ -51,6 +55,6 @@ namespace ChatClient
             }
         }
 
-
+        
     }
 }

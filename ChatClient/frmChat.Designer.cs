@@ -32,12 +32,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtRoom = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnPostMessage = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -88,15 +88,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sala";
             // 
-            // button2
+            // txtUser
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(87, 87);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Remover";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Location = new System.Drawing.Point(6, 29);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(335, 25);
+            this.txtUser.TabIndex = 0;
+            this.txtUser.Text = "Informe o Usuário. Ex: José";
             // 
             // btnLoad
             // 
@@ -108,6 +107,17 @@
             this.btnLoad.Text = "Carregar";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(87, 87);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 27);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Remover";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
@@ -141,15 +151,6 @@
             this.txtMessage.Size = new System.Drawing.Size(257, 25);
             this.txtMessage.TabIndex = 5;
             this.txtMessage.Text = "Digite a mensagem aqui";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(6, 29);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(335, 25);
-            this.txtUser.TabIndex = 0;
-            this.txtUser.Text = "Informe o Usuário. Ex: José";
             // 
             // frmChat
             // 
