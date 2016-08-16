@@ -49,6 +49,7 @@ namespace ChatClient
 
         private void RefreshMessages(List<Api.Model.Messages> messages)
         {
+            listBox1.Items.Clear();
             foreach (var message in messages)
             {
                 listBox1.Items.Add($"{message.User}: {message.Message}, às {message.Inclusion}");

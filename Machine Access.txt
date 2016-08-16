@@ -13,3 +13,7 @@ pwd: programacao@cf2016
 2. mstsc
 3. colocar ip
 ====================================================
+
+:: CONECTAR BROWSER ::
+
+http://programacao-pc.brazilsouth.cloudapp.azure.com:5000/help

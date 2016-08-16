@@ -27,7 +27,7 @@ namespace ChatClient.Api
             var contentJson = JsonConvert.SerializeObject(message);
 
             var response = 
-               _httpService.Post("http://localhost:5000/api/Chat/Entrar/" + room, contentJson);
+               _httpService.Post("http://programacao-pc.brazilsouth.cloudapp.azure.com:5000/api/Chat/Entrar/" + room, contentJson);
 
 
 
@@ -38,7 +38,7 @@ namespace ChatClient.Api
 
         public List<Model.Messages> LoadMessages(string room)
         {
-            var response = _httpService.Get("http://localhost:5000/api/Chat/Carregar/" + room);
+            var response = _httpService.Get("http://programacao-pc.brazilsouth.cloudapp.azure.com:5000/api/Chat/Carregar/" + room);
             var messages = JsonConvert.DeserializeObject<List<Model.Messages>>(response);
             return messages;
         }
@@ -53,7 +53,7 @@ namespace ChatClient.Api
             };
             var contentJson = JsonConvert.SerializeObject(message);
 
-            var response = _httpService.Post("http://localhost:5000/api/Chat/Postar/" + room, contentJson);
+            var response = _httpService.Post("http://programacao-pc.brazilsouth.cloudapp.azure.com:5000/api/Chat/Postar/" + room, contentJson);
         }
 
 
